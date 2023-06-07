@@ -1,0 +1,22 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "onnx_proto",
+    srcs = [
+        "onnx.proto",
+        "onnx-operators.proto",
+        "onnx-data.proto",
+    ],
+)
+
+cc_proto_library(
+    name = "onnx_cc_proto",
+    deps = [":onnx_proto"],
+)
+
+cc_library(
+    name = "onnx",
+    hdrs = glob(["**/*.h"]),
+    srcs = glob(["**/*.cc"]),
+    deps = [":onnx_cc_proto"],
+)
