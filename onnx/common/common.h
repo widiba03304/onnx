@@ -8,6 +8,7 @@
 
 #define ONNX_UNUSED_PARAMETER(x) (void)(x)
 
+#include <iostream>
 #define ONNX_THROW(...)                                   \
   do {                                                    \
     std::cerr << onnx::MakeString(__VA_ARGS__); \
