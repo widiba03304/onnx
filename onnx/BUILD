@@ -24,4 +24,5 @@ cc_library(
     hdrs = glob(["**/*.h"]),
     srcs = glob(["**/*.cc"]),
     deps = [":onnx_cc_proto"],
+    copts = ["-DONNX_NO_EXCEPTIONS=1"]
 )
