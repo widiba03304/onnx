@@ -3,5 +3,7 @@ build --host_cxxopt=-std=c++14
 test --cxxopt=-std=c++14
 test --host_cxxopt=-std=c++14
 
+build --define ONNX_NO_EXCEPTIONS=true
 build --define ONNX_UNUSED_PARAMETER=true
+test --define ONNX_NO_EXCEPTIONS=true
 test --define ONNX_UNUSED_PARAMETER=true
